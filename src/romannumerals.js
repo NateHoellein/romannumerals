@@ -6,8 +6,10 @@ global.theApp.RomanNumerals = function() {
     this.convert = function(number) {
       if(number === 1) {
         return "I";
-      } else {
+      } else if(number === 2) {
         return "II";
+      } else {
+        return "III";
       }
      };
   };
