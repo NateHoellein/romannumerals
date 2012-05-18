@@ -26,12 +26,19 @@ describe('RomanNumerals', function() {
     verify(99, "XCIX");
   });
 
+  it('should verify 3 digit numbers', function() {
+    verify(100, "C");
+    verify(105, "CV");
+    verify(115, "CXV");
+    verify(225, "CCXXV");
+    verify(357, "CCCLVII");
+  });
 
   function verify(number, expected) {
     var RomanNumerals = global.theApp.RomanNumerals();
     var romannumeral = new RomanNumerals();
 
     var numeral = romannumeral.convert(number);
-    numeral.should.equal(expected);
+    numeral.should.equal(expected, "Actual: " + numeral + " Expected: " + expected);
   };
 });
