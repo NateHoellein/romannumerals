@@ -34,6 +34,20 @@ describe('RomanNumerals', function() {
     verify(357, "CCCLVII");
   });
 
+  it('should verify 4 digit numbers', function() {
+    verify(1000, "M");
+    verify(1001, "MI");
+    verify(1974, "MCMLXXIV");
+  });
+
+  it('shouldd verify 5 digit numbers', function() {
+    verify(23456,"XXMMMCDLVI");
+  });
+
+  it('should verify 6 digit numbers', function() {
+    verify(723987, "DCCXXMMMCMLXXXVII");
+  });
+
   function verify(number, expected) {
     var RomanNumerals = global.theApp.RomanNumerals();
     var romannumeral = new RomanNumerals();
