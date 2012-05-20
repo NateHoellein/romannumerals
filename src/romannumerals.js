@@ -2,9 +2,6 @@ global.theApp = {};
 
 global.theApp.RomanNumerals = function() {
 
-  var RomanNumerals = function() {
-    this.convert = function(number) {
-      
       var singleDigitHash = {
         0: "",
         1: "I",
@@ -18,7 +15,7 @@ global.theApp.RomanNumerals = function() {
         9: "IX",
         10: "X"
       };
-    
+
       var tensHash = {
         0: "",
         1: "X",
@@ -32,6 +29,7 @@ global.theApp.RomanNumerals = function() {
         9: "XC"
       };
 
+      
       var hundredsHash = {
         0: "",
         1: "C",
@@ -44,7 +42,7 @@ global.theApp.RomanNumerals = function() {
         8: "DCCC",
         9: "CM"
       };
-
+      
       var thousandsHash = {
         1: "M",
         2: "MM",
@@ -55,8 +53,24 @@ global.theApp.RomanNumerals = function() {
         7: "VMM",
         8: "VMMM",
         9: "IX"
-
       };
+
+      
+      var thousandsHash = {
+        1: "M",
+        2: "MM",
+        3: "MMM",
+        4: "MMMM",
+        5: "V",
+        6: "VM",
+        7: "VMM",
+        8: "VMMM",
+        9: "IX"
+      };
+
+  var RomanNumerals = function() {
+    this.convert = function(number) {
+    
 
       var positionHash = {
         1: singleDigitHash,
@@ -78,9 +92,6 @@ global.theApp.RomanNumerals = function() {
       return response;
     };
 
-    function getNumeral(position,number) {
-      return positionHash[position][number]; 
-    };
 
 };
   return RomanNumerals;
