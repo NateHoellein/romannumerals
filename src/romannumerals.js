@@ -1,82 +1,19 @@
-global.theApp = {};
+var Definitions = require(__dirname + '/../src/romannumeraldefs.js');
+
 
 global.theApp.RomanNumerals = function() {
 
-      var singleDigitHash = {
-        0: "",
-        1: "I",
-        2: "II",
-        3: "III",
-        4: "IV",
-        5: "V",
-        6: "VI",
-        7: "VII",
-        8: "VIII",
-        9: "IX",
-        10: "X"
-      };
-
-      var tensHash = {
-        0: "",
-        1: "X",
-        2: "XX",
-        3: "XXX",
-        4: "XL",
-        5: "L",
-        6: "LX",
-        7: "LXX",
-        8: "LXXX",
-        9: "XC"
-      };
-
-      
-      var hundredsHash = {
-        0: "",
-        1: "C",
-        2: "CC",
-        3: "CCC",
-        4: "CD",
-        5: "D",
-        6: "DC",
-        7: "DCC",
-        8: "DCCC",
-        9: "CM"
-      };
-      
-      var thousandsHash = {
-        1: "M",
-        2: "MM",
-        3: "MMM",
-        4: "MMMM",
-        5: "V",
-        6: "VM",
-        7: "VMM",
-        8: "VMMM",
-        9: "IX"
-      };
-
-      
-      var thousandsHash = {
-        1: "M",
-        2: "MM",
-        3: "MMM",
-        4: "MMMM",
-        5: "V",
-        6: "VM",
-        7: "VMM",
-        8: "VMMM",
-        9: "IX"
-      };
+  var Definitions = global.theApp.Consts.Definitions;
+  var defs = new Definitions();
 
   var RomanNumerals = function() {
     this.convert = function(number) {
     
-
       var positionHash = {
-        1: singleDigitHash,
-        2: tensHash,
-        3: hundredsHash,
-        4: thousandsHash
+        1: defs.ones,
+        2: defs.tens,
+        3: defs.hundreds,
+        4: defs.thousands
       };
 
       var response = "";
@@ -91,7 +28,6 @@ global.theApp.RomanNumerals = function() {
 
       return response;
     };
-
 
 };
   return RomanNumerals;
